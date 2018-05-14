@@ -1,0 +1,28 @@
+<h4>{{event.id > 0 ? 'Edit Event' : 'New Event'}}</h4>
+
+<div class="row">
+  <form #eventForm="ngForm" (ngSubmit)="onSubmit()" class="col s12">      
+    <div class="row">
+      <div class="input-field col s12 m4 l4">
+        <i class="material-icons prefix">short_text</i>        
+        <input id="name" name="name" type="text" class="validate" [(ngModel)]="event.name" required>
+        <label class="active" for="name" data-error="Name is required" data-success="Right">Event Name</label>
+      </div>
+      <div class="input-field col s12 m4 l4">
+        <i class="material-icons prefix">date_range</i>                
+        <input id="when" name="when" 
+          materialize="pickadate" 
+          [materializeParams]="[{ format: 'yyyy-mm-dd', closeOnSelect: true }]"                 
+          [(ngModel)]="event.when"
+          class="datepicker" required>
+        <label class="active" for="when">Event Date</label>
+      </div>      
+      <div class="input-field col s12 m2 l2">
+        <button [disabled]="!eventForm.form.valid" type="submit" class="waves-effect waves-light btn blue">Save</button>      
+      </div>
+      <div class="input-field col s12 m2 l2">
+      <a (click)="goBack()" class="waves-effect waves-light btn red">Cancel</a>
+      </div>
+    </div>
+  </form>
+</div>

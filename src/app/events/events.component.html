@@ -1,0 +1,72 @@
+<h4>List of events</h4>
+
+<a routerLink="/create" class="btn-floating btn-large waves-effect waves-light blue">
+  <i class="material-icons">add</i>
+</a>
+
+<!-- <p>{{eventPageResult.events[0]}}</p>
+<p>{{eventPageResult.events[0].id}}</p>
+<p>{{eventPageResult.events[0].name}}</p>
+<p>{{eventPageResult.events[1].id}}</p>
+<p>{{eventPageResult.events[1].name}}</p> -->
+
+<!--Testar se eventPageResult ou eventPageResult.events é null o que acontece?-->
+<!-- <div *ngIf="eventPageResult">eventPageResult está undefined
+  <p>{{!eventPageResult}}</p>
+</div> -->
+<!-- <div *ngIf="eventPageResult.events">eventPageResult.events está undefined
+  <p>{{!eventPageResult.events}}</p>
+</div> -->
+
+<!-- <ul *ngIf="eventPageResult.total > 1" class="pagination">
+  <li *ngIf="pageIndex > 1" class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+  <li class="waves-effect"><a [routerLink]="['/eventPage', pageIndex, pageSize]"><i class="material-icons">chevron_right</i></a></li>
+</ul> -->
+
+<!-- <ul *ngIf="eventPageResult.total > 1" class="pagination">
+  <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+  <li class="active"><a href="#!">1</a></li>
+  <li class="waves-effect"><a routerLink="events/[pageIndex]/[pageSize]">Next</a></li>
+  <li class="waves-effect"><a href="#!">2</a></li>
+  <li class="waves-effect"><a href="#!">3</a></li>
+  <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+</ul> -->
+
+<div *ngIf="eventPageResult">
+
+  <table class="responsive-table striped">
+    <thead>
+      <tr>
+          <th>Event names:</th>
+          <th></th>
+          <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr *ngFor="let event of eventPageResult.events">
+        <td>{{event.name}}</td>
+        <td>
+            <a routerLink="/detail/{{event.id}}" class="btn-floating btn-small waves-effect waves-light yellow">
+              <i class="material-icons">search</i>
+            </a>
+        </td>
+        <td>
+          <a routerLink="/edit/{{event.id}}" class="btn-floating btn-small waves-effect waves-light green">
+              <i class="material-icons">edit</i>
+            </a>
+        </td>        
+        <td>
+            <a (click)="remove(event)" class="btn-floating btn-small waves-effect waves-light red">
+              <i class="material-icons">delete</i>
+            </a>
+        </td>
+      </tr>      
+    </tbody>
+  </table>
+
+  <div *ngIf="eventPageResult.total === 0">
+    <p class="red-text text-darken-2">There aren't Events registred.</p>
+  </div>
+</div>
+

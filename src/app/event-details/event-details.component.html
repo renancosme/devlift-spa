@@ -1,0 +1,15 @@
+<h4>Event Details</h4>
+
+<div class="row">
+  <div class="input-field col s12 m4 l4">
+    <i class="material-icons prefix">short_text</i>      
+    <input disabled id="name" name="name" type="text" class="disabled" [ngModel]="event.name" >      
+  </div>
+  <div class="input-field col s12 m4 l4">
+    <i class="material-icons prefix">date_range</i>      
+    <input disabled id="when" name="when" type="text" class="disabled" [ngModel]="event.when | date: 'dd-MM-yyyy'" >
+  </div>
+  <div class="input-field col s12 m2 l2">
+    <button (click)="goBack()" class="waves-effect waves-light btn red">Back</button>
+  </div>
+</div>
