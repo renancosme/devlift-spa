@@ -9,23 +9,23 @@ Steps:
 2. Download this backend application (in Asp.Net WEB API)
 3. Run the backend application locally using Visual Studio
 
-![Backend API running](https://raw.githubusercontent.com//renancosme/devlift-spa/master/docs/dev-lift-api-local-demo.png)
+![Backend API running](https://github.com/renancosme/devlift-spa/blob/master/docs/dev-lift-api-local-demo.png)
 
-4. Copy the url from the backend application and than update the url in the EventService.ts file.
+4. Copy the url from the backend application and than update the url in the environment.ts file.
 
 Replace:
-*private eventsUrl = 'http://localhost:31242/api/event'; // WebAPI URL*
+*devLiftBackendApiUrl: 'http://localhost:31242/api/event'; // WebAPI URL*
 
 By:
-*private eventsUrl = 'http://yourLocalUrl/api/event'; // WebAPI URL*
+*devLiftBackendApiUrl = 'http://yourLocalUrl/api/event'; // WebAPI URL*
 
 Finally, run the frontend application using the command `ng serve` Angular CLI.
 
 ## Local Live Demo
 
-![Spa running](https://raw.githubusercontent.com//renancosme/devlift-spa/master/docs/dev-lift-app-running-local-demo.png)
+![Spa running](https://github.com/renancosme/devlift-spa/blob/master/docs/dev-lift-app-running-local-demo.png)
 
-![Spa Page](https://raw.githubusercontent.com//renancosme/devlift-spa/master/docs/dev-lift-app-local-demo.png)
+![Spa Page](https://github.com/renancosme/devlift-spa/blob/master/docs/dev-lift-api-local-demo.png)
 
 ## Development server
 
