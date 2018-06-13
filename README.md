@@ -25,7 +25,7 @@ Finally, run the frontend application using the command `ng serve`. Navigate to 
 
 ## Local Live Demo
 
-![Spa Page](https://github.com/renancosme/devlift-spa/blob/master/docs/dev-lift-api-local-demo.png)
+![Spa Page](https://github.com/renancosme/devlift-spa/blob/master/docs/dev-lift-app-local-demo.png)
 
 
 
